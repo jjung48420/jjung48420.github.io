@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Your Name</title>
-  <meta name="description" content="Personal website of Your Name.">
+  <title>Junyoung Jung</title>
+  <meta name="description" content="Personal website of Junyoung Jung.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -64,7 +64,7 @@
     .avatar { flex: none; width: 140px; height: 140px; border-radius: 50%; object-fit: cover; }
     .tagline { color: var(--muted); margin: 0 0 12px; }
     .links { display: flex; flex-wrap: wrap; gap: 8px; list-style: none; padding: 0; margin: 16px 0 0; }
-    .links a {
+    .links a, .links .email {
       display: inline-block; padding: 4px 12px; border: 1px solid var(--border);
       border-radius: 999px; font-size: 14px; color: var(--text);
     }
@@ -114,7 +114,7 @@
 <body>
   <header class="site-header">
     <nav class="nav container">
-      <a class="brand" href="#top">Your Name</a>
+      <a class="brand" href="#top">Junyoung Jung</a>
       <ul class="nav-links">
         <li><a href="#about">About</a></li>
         <li><a href="#news">News</a></li>
@@ -131,20 +131,20 @@
   <main id="top" class="container">
     <!-- ============ ABOUT ============ -->
     <section id="about" class="hero">
-      <img class="avatar" src="images/me.JPG" alt="Photo of Your Name">
+      <img class="avatar" src="images/me.JPG" alt="Photo of Junyoung Jung">
       <div class="hero-text">
-        <h1>Your Name</h1>
+        <h1>Junyoung Jung</h1>
         <p class="tagline">Your role · Your affiliation</p>
         <p>
           Write two or three sentences about yourself here: what you work on, what you care about,
           and what you're looking for.
         </p>
         <ul class="links">
-          <li><a href="mailto:you@example.com">Email</a></li>
+          <li><span class="email">jun3700 at khu.ac.kr</span></li>
           <li><a href="https://github.com/jjung48420">GitHub</a></li>
-          <li><a href="https://scholar.google.com/">Google Scholar</a></li>
-          <li><a href="https://www.linkedin.com/">LinkedIn</a></li>
-          <li><a href="cv.pdf">CV</a></li>
+          <li><a href="https://scholar.google.com/citations?user=IHjcKNkAAAAJ&amp;hl=en">Google Scholar</a></li>
+          <li><a href="https://www.linkedin.com/in/junyoung-jung-b6b2a226a/">LinkedIn</a></li>
+          <li><a href="images/CV.pdf">CV</a></li>
         </ul>
       </div>
     </section>
@@ -166,7 +166,7 @@
           <img class="pub-thumb" src="images/monosaod.png" alt="MonoSAOD overview figure">
           <div class="pub-body">
             <p class="pub-title">MonoSAOD: Full Paper Title Here</p>
-            <p class="pub-authors"><strong>Your Name</strong>, Coauthor One, Coauthor Two</p>
+            <p class="pub-authors"><strong>Junyoung Jung</strong>, Coauthor One, Coauthor Two</p>
             <p class="pub-venue">IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR), 2026</p>
             <p class="pub-links">
               <a href="https://arxiv.org/abs/XXXX.XXXXX">Paper</a>
@@ -197,12 +197,12 @@
     <!-- ============ CONTACT ============ -->
     <section id="contact">
       <h2>Contact</h2>
-      <p>The best way to reach me is by email at <a href="mailto:you@example.com">you@example.com</a>.</p>
+      <p>The best way to reach me is by email at <strong>jun3700 at khu.ac.kr</strong>.</p>
     </section>
   </main>
 
   <footer class="site-footer container">
-    <p>© <span id="year">2026</span> Your Name</p>
+    <p>© <span id="year">2026</span> Junyoung Jung</p>
   </footer>
 
   <script>
