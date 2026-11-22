@@ -87,6 +87,7 @@
     }
     .pub-body { min-width: 0; }
     .pub > a { flex: none; line-height: 0; }
+    .pubs .pub-note { color: var(--muted); font-size: 13px; margin-top: 4px; }
 
     .site-footer { padding: 32px 16px 48px; color: var(--muted); font-size: 14px; }
 
@@ -125,10 +126,13 @@
       <img class="avatar" src="images/me.JPG" alt="Photo of Junyoung Jung">
       <div class="hero-text">
         <h1>Junyoung Jung</h1>
-        <p class="tagline">Your role · Your affiliation</p>
+        <p class="tagline">M.S. Student · Kyung Hee University</p>
         <p>
-          Write two or three sentences about yourself here: what you work on, what you care about,
-          and what you're looking for.
+          I am currently an M.S. student in the <a href="https://visualai.khu.ac.kr/">Visual AI Lab</a>
+          at Kyung Hee University, Korea, advised by Professor
+          <a href="https://scholar.google.com/citations?user=JMZ80R8AAAAJ&amp;hl=ko&amp;oi=sra">Jung Uk Kim</a>.
+          I received my B.S. in Software Convergence from Kyung Hee University.
+          My current research interests are 3D object detection and autonomous driving.
         </p>
         <ul class="links">
           <li><span class="email">jun3700 at khu.ac.kr</span></li>
@@ -156,14 +160,15 @@
         <li class="pub">
           <a href="https://visualaikhu.github.io/MonoSAOD/"><img class="pub-thumb" src="images/monosaod.png" alt="MonoSAOD overview figure"></a>
           <div class="pub-body">
-            <p class="pub-title">MonoSAOD: Full Paper Title Here</p>
-            <p class="pub-authors"><strong>Junyoung Jung</strong>, Coauthor One, Coauthor Two</p>
+            <p class="pub-title">MonoSAOD: Monocular 3D Object Detection with Sparsely Annotated Label</p>
+            <p class="pub-authors"><strong>Junyoung Jung</strong><sup>*</sup>, Seokwon Kim<sup>*</sup>, Jung Uk Kim<sup>†</sup></p>
             <p class="pub-venue">IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR), 2026</p>
             <p class="pub-links">
               <a href="https://arxiv.org/abs/2604.01646">Paper</a>
               <a href="https://visualaikhu.github.io/MonoSAOD/">Project Page</a>
               <a href="https://github.com/VisualAIKHU/MonoSAOD">Code</a>
             </p>
+            <p class="pub-note"><sup>*</sup> Equal contribution &nbsp;·&nbsp; <sup>†</sup> Corresponding author</p>
           </div>
         </li>
       </ol>
