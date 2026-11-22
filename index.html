@@ -1,1 +1,219 @@
-asd
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Your Name</title>
+  <meta name="description" content="Personal website of Your Name.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script>
+    try { var t = localStorage.getItem('theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch (e) {}
+  </script>
+  <style>
+    :root {
+      --bg: #ffffff; --surface: #f6f7f9; --text: #1c1e21; --muted: #5f6670;
+      --border: #e3e6ea; --accent: #2557d6; --accent-soft: #e8eefc; --maxw: 760px;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root:not([data-theme="light"]) {
+        --bg: #111317; --surface: #1a1d23; --text: #e6e8eb; --muted: #9aa1ab;
+        --border: #2a2e36; --accent: #7ea2ff; --accent-soft: #1e2840;
+      }
+    }
+    :root[data-theme="dark"] {
+      --bg: #111317; --surface: #1a1d23; --text: #e6e8eb; --muted: #9aa1ab;
+      --border: #2a2e36; --accent: #7ea2ff; --accent-soft: #1e2840;
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 72px; }
+    body {
+      margin: 0; background: var(--bg); color: var(--text);
+      font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
+      font-size: 16px; line-height: 1.65; -webkit-font-smoothing: antialiased;
+    }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .container { max-width: var(--maxw); margin: 0 auto; padding: 0 16px; }
+
+    .site-header {
+      position: sticky; top: 0; z-index: 10;
+      background: color-mix(in srgb, var(--bg) 88%, transparent);
+      backdrop-filter: blur(8px); border-bottom: 1px solid var(--border);
+    }
+    .nav { display: flex; align-items: center; gap: 16px; height: 56px; }
+    .brand { font-weight: 700; color: var(--text); }
+    .brand:hover { text-decoration: none; }
+    .nav-links { display: flex; gap: 18px; list-style: none; margin: 0 0 0 auto; padding: 0; font-size: 14px; }
+    .nav-links a { color: var(--muted); }
+    .nav-links a:hover { color: var(--text); text-decoration: none; }
+    .theme-toggle {
+      border: 1px solid var(--border); background: var(--surface); color: var(--text);
+      border-radius: 8px; width: 32px; height: 32px; cursor: pointer;
+      display: grid; place-items: center; padding: 0;
+    }
+
+    section { padding: 40px 0; border-bottom: 1px solid var(--border); }
+    section:last-of-type { border-bottom: none; }
+    h1 { font-size: 2rem; line-height: 1.2; margin: 0 0 4px; }
+    h2 { font-size: 1.25rem; margin: 0 0 16px; }
+    h3 { font-size: 1rem; margin: 0 0 6px; }
+
+    .hero { display: flex; gap: 28px; align-items: flex-start; padding-top: 56px; }
+    .avatar { flex: none; width: 140px; height: 140px; border-radius: 50%; object-fit: cover; }
+    .avatar-initials {
+      display: grid; place-items: center; background: var(--accent-soft);
+      color: var(--accent); font-size: 44px; font-weight: 700;
+    }
+    .tagline { color: var(--muted); margin: 0 0 12px; }
+    .links { display: flex; flex-wrap: wrap; gap: 8px; list-style: none; padding: 0; margin: 16px 0 0; }
+    .links a {
+      display: inline-block; padding: 4px 12px; border: 1px solid var(--border);
+      border-radius: 999px; font-size: 14px; color: var(--text);
+    }
+    .links a:hover { border-color: var(--accent); color: var(--accent); text-decoration: none; }
+
+    .news { list-style: none; padding: 0; margin: 0; }
+    .news li { display: flex; gap: 16px; padding: 6px 0; }
+    .news time { flex: none; width: 80px; color: var(--muted); font-size: 14px; padding-top: 1px; }
+
+    .pubs { list-style: none; padding: 0; margin: 0; display: grid; gap: 20px; }
+    .pubs p { margin: 0; }
+    .pub-title { font-weight: 600; }
+    .pub-authors, .pub-venue { color: var(--muted); font-size: 15px; }
+    .pub-venue { font-style: italic; }
+    .pubs .pub-links { margin-top: 4px; display: flex; gap: 12px; font-size: 14px; }
+
+    .cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 16px; }
+    .card { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 16px; }
+    .card p { margin: 0 0 8px; color: var(--muted); font-size: 15px; }
+    .card .tags { display: flex; flex-wrap: wrap; gap: 6px; margin: 0; }
+    .tags span {
+      font-size: 12px; padding: 2px 8px; border-radius: 999px;
+      background: var(--accent-soft); color: var(--accent);
+    }
+
+    .site-footer { padding: 32px 16px 48px; color: var(--muted); font-size: 14px; }
+
+    @media (max-width: 640px) {
+      .nav-links { display: none; }
+      .theme-toggle { margin-left: auto; }
+      .hero { flex-direction: column; align-items: center; text-align: center; padding-top: 40px; }
+      .links { justify-content: center; }
+      .avatar { width: 112px; height: 112px; }
+      .avatar-initials { font-size: 36px; }
+      h1 { font-size: 1.75rem; }
+      .news li { flex-direction: column; gap: 0; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav container">
+      <a class="brand" href="#top">Your Name</a>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#news">News</a></li>
+        <li><a href="#publications">Publications</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Toggle dark mode">
+        <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="6.5" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M8 1.5a6.5 6.5 0 0 1 0 13z" fill="currentColor"/></svg>
+      </button>
+    </nav>
+  </header>
+
+  <main id="top" class="container">
+    <!-- ============ ABOUT ============ -->
+    <section id="about" class="hero">
+      <!-- To use a photo: upload it as profile.jpg and replace the div below with
+           <img class="avatar" src="profile.jpg" alt="Photo of Your Name"> -->
+      <div class="avatar avatar-initials" aria-hidden="true">YN</div>
+      <div class="hero-text">
+        <h1>Your Name</h1>
+        <p class="tagline">Your role · Your affiliation</p>
+        <p>
+          Write two or three sentences about yourself here: what you work on, what you care about,
+          and what you're looking for.
+        </p>
+        <ul class="links">
+          <li><a href="mailto:you@example.com">Email</a></li>
+          <li><a href="https://github.com/jjung48420">GitHub</a></li>
+          <li><a href="https://scholar.google.com/">Google Scholar</a></li>
+          <li><a href="https://www.linkedin.com/">LinkedIn</a></li>
+          <li><a href="cv.pdf">CV</a></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============ NEWS ============ -->
+    <section id="news">
+      <h2>News</h2>
+      <ul class="news">
+        <li><time>Nov 2026</time><span>Launched this website.</span></li>
+        <li><time>Mon YYYY</time><span>Something worth announcing: a paper, award, talk, or new role.</span></li>
+      </ul>
+    </section>
+
+    <!-- ============ PUBLICATIONS ============ -->
+    <section id="publications">
+      <h2>Publications</h2>
+      <ol class="pubs">
+        <li>
+          <p class="pub-title">Title of Your Paper</p>
+          <p class="pub-authors"><strong>Your Name</strong>, Coauthor One, Coauthor Two</p>
+          <p class="pub-venue">Venue Name, Year</p>
+          <p class="pub-links"><a href="#">PDF</a><a href="#">Code</a><a href="#">BibTeX</a></p>
+        </li>
+        <li>
+          <p class="pub-title">Another Paper Title</p>
+          <p class="pub-authors">Coauthor One, <strong>Your Name</strong></p>
+          <p class="pub-venue">Venue Name, Year</p>
+          <p class="pub-links"><a href="#">PDF</a></p>
+        </li>
+      </ol>
+    </section>
+
+    <!-- ============ PROJECTS ============ -->
+    <section id="projects">
+      <h2>Projects</h2>
+      <div class="cards">
+        <article class="card">
+          <h3><a href="#">Project One</a></h3>
+          <p>One or two lines describing what it is and why it's interesting.</p>
+          <p class="tags"><span>Python</span><span>ML</span></p>
+        </article>
+        <article class="card">
+          <h3><a href="#">Project Two</a></h3>
+          <p>One or two lines describing what it is and why it's interesting.</p>
+          <p class="tags"><span>Web</span></p>
+        </article>
+      </div>
+    </section>
+
+    <!-- ============ CONTACT ============ -->
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>The best way to reach me is by email at <a href="mailto:you@example.com">you@example.com</a>.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer container">
+    <p>© <span id="year">2026</span> Your Name</p>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    document.getElementById('theme-toggle').addEventListener('click', function () {
+      var root = document.documentElement;
+      var current = root.getAttribute('data-theme') ||
+        (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      var next = current === 'dark' ? 'light' : 'dark';
+      root.setAttribute('data-theme', next);
+      try { localStorage.setItem('theme', next); } catch (e) {}
+    });
+  </script>
+</body>
+</html>
